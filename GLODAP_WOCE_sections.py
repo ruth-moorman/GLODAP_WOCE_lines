@@ -709,7 +709,7 @@ def P15_GLODAP_profile(variable, unique_cruise, year, so_glodap, extend = True):
     interp_latitude = np.arange(-77,-30,0.1)
     interp_depth = np.append(np.arange(1,1000,1),np.arange(1000,6010,10))
     
-    so_var = so_glodap.sel(VARIABLE = 'temperature')
+    so_var = so_glodap.sel(VARIABLE = variable)
     P15_1 = so_var.where(so_var.cruise == unique_cruise[33], drop = True)
     P15_2 = so_var.where(so_var.cruise == unique_cruise[34], drop = True)
     P15_3 = so_var.where(so_var.cruise == unique_cruise[61], drop = True)
